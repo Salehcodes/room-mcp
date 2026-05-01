@@ -1,9 +1,11 @@
 import { Server } from "@modelcontextprotocol/sdk/server/index.js";
-import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
+import { SSEServerTransport } from "@modelcontextprotocol/sdk/server/sse.js";
 import {
   CallToolRequestSchema,
   ListToolsRequestSchema,
 } from "@modelcontextprotocol/sdk/types.js";
+import express from "express";
+import cors from "cors";
 import { z } from "zod";
 import { RoomEngine } from "./engine.js";
 import { LightingMood } from "./types.js";
@@ -49,7 +51,6 @@ const server = new Server(
 );
 
 // ── Tool definitions ────────────────────────────────────
-// This tells the AI: "Here is what I can do and what each tool expects"
 
 server.setRequestHandler(ListToolsRequestSchema, async () => {
   return {
@@ -144,13 +145,114 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
   };
 });
 
-import { SSEServerTransport } from "@modelcontextprotocol/sdk/server/sse.js";
-import express from "express";
+// ── Tool handlers ───────────────────────────────────────
+
+server.setRequestHandler(CallToolRequestSchema, async (request) => {
+  const { name, arguments: args } = request.params;
+
+  try {
+    switch (name) {
+      case "add_item": {
+        const parsed = AddItemSchema.parse(args);
+        const result = engine.addItem(
+          parsed.type,
+          parsed.position,
+          parsed.variant,
+          parsed.facing,
+        );
+        if (!result.success) {
+          return {
+            content: [{ type: "text", text: `Error: ${result.error}` }],
+            isError: true,
+          };
+        }
+        return {
+          content: [
+            {
+              type: "text",
+              text: `Added ${result.item!.type} (${result.item!.id}) at (${result.item!.position.x}, ${result.item!.position.y})`,
+            },
+          ],
+        };
+      }
+
+      case "remove_item": {
+        const parsed = RemoveItemSchema.parse(args);
+        const result = engine.removeItem(parsed.position);
+        if (!result.success) {
+          return {
+            content: [{ type: "text", text: `Error: ${result.error}` }],
+            isError: true,
+          };
+        }
+        return {
+          content: [
+            {
+              type: "text",
+              text: `Removed item at (${parsed.position.x}, ${parsed.position.y})`,
+            },
+          ],
+        };
+      }
+
+      case "set_lighting": {
+        const parsed = SetLightingSchema.parse(args);
+        engine.setLighting(parsed.mood as LightingMood);
+        return {
+          content: [{ type: "text", text: `Lighting set to ${parsed.mood}` }],
+        };
+      }
+
+      case "clear_room": {
+        engine.clearRoom();
+        return {
+          content: [{ type: "text", text: "Room cleared." }],
+        };
+      }
+
+      case "export_svg": {
+        const svg = engine.renderSVG();
+        return {
+          content: [{ type: "text", text: svg }],
+        };
+      }
+
+      case "get_room_state": {
+        const state = engine.getState();
+        return {
+          content: [
+            {
+              type: "text",
+              text: JSON.stringify(state, null, 2),
+            },
+          ],
+        };
+      }
+
+      default:
+        return {
+          content: [{ type: "text", text: `Unknown tool: ${name}` }],
+          isError: true,
+        };
+    }
+  } catch (err) {
+    const message = err instanceof Error ? err.message : String(err);
+    return {
+      content: [{ type: "text", text: `Validation/Runtime error: ${message}` }],
+      isError: true,
+    };
+  }
+});
 
 // ── Start ───────────────────────────────────────────────
 
 async function main() {
   const app = express();
+
+  // CRITICAL: Parse JSON bodies and allow cross-origin requests
+  app.use(cors());
+  app.use(express.json());
+
   let transport: SSEServerTransport | null = null;
 
   // Health check
