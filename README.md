@@ -448,33 +448,7 @@ It is a small but practical example of connecting an AI assistant to a custom in
 - Add room themes
 - Add authentication for deployed usage
 
----
 
-## Suggested Screenshot Folder
-
-Create this folder:
-
-```bash
-mkdir -p docs/screenshots
-```
-
-Then save your screenshots as:
-
-```txt
-docs/screenshots/empty-room.png
-docs/screenshots/room-with-furniture.png
-docs/screenshots/frontend-viewer.png
-```
-
-For the recorded video, you can create:
-
-```txt
-docs/demo.mp4
-```
-
-Or upload the video externally and replace the link in the Demo section.
-
----
 
 ## License
 
