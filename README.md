@@ -1,7 +1,9 @@
 # Room MCP — Isometric Room Builder
+<p align="center">
 <a href="https://www.youtube.com/watch?v=Zv9mTm1hc30">
   <img width="300" height="169" alt="Watch Video" src="https://github.com/user-attachments/assets/2dc4e02b-4c2c-4649-92ce-bf3abb5a1b04" />
 </a>
+</p>
 
 Room MCP is a TypeScript-based MCP server that lets an AI assistant build and modify an isometric room using tools.
 
