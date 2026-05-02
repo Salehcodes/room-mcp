@@ -15,6 +15,18 @@ import { LightingMood } from "./types";
 
 const engine = new RoomEngine();
 
+/**
+ * Server-Sent Events clients.
+ * Every connected browser gets a function that sends a refresh event.
+ */
+const roomClients = new Set<() => void>();
+
+function notifyRoomChanged() {
+  for (const client of roomClients) {
+    client();
+  }
+}
+
 const PositionSchema = z.object({
   x: z.number().int().min(0).max(9),
   y: z.number().int().min(-1).max(9),
@@ -150,6 +162,8 @@ function createRoomServer() {
             };
           }
 
+          notifyRoomChanged();
+
           return {
             content: [
               {
@@ -171,6 +185,8 @@ function createRoomServer() {
             };
           }
 
+          notifyRoomChanged();
+
           return {
             content: [
               {
@@ -185,6 +201,8 @@ function createRoomServer() {
           const parsed = SetLightingSchema.parse(args);
           engine.setLighting(parsed.mood as LightingMood);
 
+          notifyRoomChanged();
+
           return {
             content: [{ type: "text", text: `Lighting set to ${parsed.mood}` }],
           };
@@ -192,6 +210,9 @@ function createRoomServer() {
 
         case "clear_room": {
           engine.clearRoom();
+
+          notifyRoomChanged();
+
           return {
             content: [{ type: "text", text: "Room cleared." }],
           };
@@ -241,11 +262,51 @@ async function main() {
   app.use(cors());
   app.use(express.json());
 
-  const transports: Record<string, StreamableHTTPServerTransport> = {};
+  /**
+   * Serves:
+   * public/index.html -> http://localhost:3000/
+   */
+  app.use(express.static("public"));
 
-  app.get("/", (_req, res) => {
-    res.send("Isometric Room Builder MCP server is running.");
+  /**
+   * Frontend API: current room state as JSON.
+   */
+  app.get("/api/room", (_req, res) => {
+    res.json(engine.getState());
   });
+
+  /**
+   * Frontend API: current room as SVG.
+   */
+  app.get("/api/room/svg", (_req, res) => {
+    res.type("image/svg+xml");
+    res.send(engine.renderSVG());
+  });
+
+  /**
+   * Frontend live updates using Server-Sent Events.
+   * Browser connects to this route and waits for room changes.
+   */
+  app.get("/events", (req, res) => {
+    res.setHeader("Content-Type", "text/event-stream");
+    res.setHeader("Cache-Control", "no-cache");
+    res.setHeader("Connection", "keep-alive");
+
+    const sendUpdate = () => {
+      res.write(`data: ${JSON.stringify({ updatedAt: Date.now() })}\n\n`);
+    };
+
+    // Send one update immediately when the browser connects.
+    sendUpdate();
+
+    roomClients.add(sendUpdate);
+
+    req.on("close", () => {
+      roomClients.delete(sendUpdate);
+    });
+  });
+
+  const transports: Record<string, StreamableHTTPServerTransport> = {};
 
   app.get("/health", (_req, res) => {
     res.json({ status: "ok" });
@@ -313,6 +374,7 @@ async function main() {
 
   app.listen(PORT, "0.0.0.0", () => {
     console.error(`Room MCP HTTP server running on port ${PORT}`);
+    console.error(`Frontend: http://localhost:${PORT}`);
     console.error("MCP endpoint: /mcp");
   });
 }

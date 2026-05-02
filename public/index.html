@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Room MCP Viewer</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: #0f172a;
+        color: #e5e7eb;
+        min-height: 100vh;
+      }
+
+      header {
+        height: 64px;
+        padding: 0 24px;
+        background: #020617;
+        border-bottom: 1px solid #334155;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 20px;
+        font-weight: 700;
+      }
+
+      .status-area {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      #status {
+        font-size: 14px;
+        color: #94a3b8;
+      }
+
+      button {
+        border: none;
+        background: #2563eb;
+        color: white;
+        padding: 8px 12px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 14px;
+      }
+
+      button:hover {
+        background: #1d4ed8;
+      }
+
+      main {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 24px;
+        display: grid;
+        grid-template-columns: 1fr 320px;
+        gap: 24px;
+      }
+
+      .panel {
+        background: #1e293b;
+        border: 1px solid #334155;
+        border-radius: 16px;
+        padding: 16px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+      }
+
+      .room-panel {
+        min-height: 680px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: auto;
+      }
+
+      #room {
+        background: #f8fafc;
+        border-radius: 12px;
+        padding: 16px;
+        color: #111827;
+        min-width: 320px;
+        min-height: 320px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #room svg {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .side-panel h2 {
+        margin: 0 0 16px;
+        font-size: 18px;
+      }
+
+      .info-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 10px 0;
+        border-bottom: 1px solid #334155;
+        font-size: 14px;
+      }
+
+      .label {
+        color: #94a3b8;
+      }
+
+      .value {
+        color: #f8fafc;
+        font-weight: 600;
+      }
+
+      .items-title {
+        margin-top: 24px;
+      }
+
+      #items {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      #items li {
+        background: #0f172a;
+        border: 1px solid #334155;
+        border-radius: 10px;
+        padding: 10px;
+        margin-bottom: 10px;
+        font-size: 14px;
+        line-height: 1.4;
+      }
+
+      .item-type {
+        font-weight: 700;
+        color: #ffffff;
+      }
+
+      .item-meta {
+        color: #94a3b8;
+        font-size: 13px;
+        margin-top: 4px;
+      }
+
+      .empty {
+        color: #94a3b8;
+        font-size: 14px;
+      }
+
+      @media (max-width: 900px) {
+        main {
+          grid-template-columns: 1fr;
+        }
+
+        .room-panel {
+          min-height: 500px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Room MCP Viewer</h1>
+
+      <div class="status-area">
+        <button id="refreshButton" type="button">Refresh</button>
+        <span id="status">Connecting...</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="panel room-panel">
+        <div id="room">Loading room...</div>
+      </section>
+
+      <aside class="panel side-panel">
+        <h2>Current Room</h2>
+
+        <div class="info-row">
+          <span class="label">Lighting</span>
+          <span id="lighting" class="value">-</span>
+        </div>
+
+        <div class="info-row">
+          <span class="label">Items</span>
+          <span id="itemCount" class="value">0</span>
+        </div>
+
+        <div class="info-row">
+          <span class="label">Last update</span>
+          <span id="lastUpdate" class="value">-</span>
+        </div>
+
+        <h2 class="items-title">Items</h2>
+        <ul id="items"></ul>
+      </aside>
+    </main>
+
+    <script>
+      const roomElement = document.getElementById("room");
+      const lightingElement = document.getElementById("lighting");
+      const itemCountElement = document.getElementById("itemCount");
+      const itemsElement = document.getElementById("items");
+      const statusElement = document.getElementById("status");
+      const lastUpdateElement = document.getElementById("lastUpdate");
+      const refreshButton = document.getElementById("refreshButton");
+
+      function setStatus(text) {
+        statusElement.textContent = text;
+      }
+
+      function formatTime() {
+        return new Date().toLocaleTimeString();
+      }
+
+      function renderItems(items) {
+        itemsElement.innerHTML = "";
+
+        if (!items || items.length === 0) {
+          const li = document.createElement("li");
+          li.className = "empty";
+          li.textContent = "No items in the room yet.";
+          itemsElement.appendChild(li);
+          return;
+        }
+
+        for (const item of items) {
+          const li = document.createElement("li");
+
+          const type = document.createElement("div");
+          type.className = "item-type";
+          type.textContent = item.type;
+
+          const meta = document.createElement("div");
+          meta.className = "item-meta";
+
+          const variantText = item.variant ? ` | variant: ${item.variant}` : "";
+          const facingText = item.facing ? ` | facing: ${item.facing}` : "";
+
+          meta.textContent = `position: (${item.position.x}, ${item.position.y})${variantText}${facingText}`;
+
+          li.appendChild(type);
+          li.appendChild(meta);
+          itemsElement.appendChild(li);
+        }
+      }
+
+      async function refreshRoom() {
+        try {
+          setStatus("Updating...");
+
+          const svgResponse = await fetch("/api/room/svg", {
+            cache: "no-store",
+          });
+
+          if (!svgResponse.ok) {
+            throw new Error("Failed to load SVG");
+          }
+
+          const svgText = await svgResponse.text();
+
+          const stateResponse = await fetch("/api/room", {
+            cache: "no-store",
+          });
+
+          if (!stateResponse.ok) {
+            throw new Error("Failed to load room state");
+          }
+
+          const state = await stateResponse.json();
+
+          roomElement.innerHTML = svgText;
+
+          lightingElement.textContent = state.lighting ?? "-";
+          itemCountElement.textContent = Array.isArray(state.items)
+            ? state.items.length
+            : 0;
+
+          renderItems(state.items || []);
+
+          lastUpdateElement.textContent = formatTime();
+          setStatus("Live");
+        } catch (error) {
+          console.error(error);
+          setStatus("Error loading room");
+          roomElement.textContent = "Could not load room.";
+        }
+      }
+
+      refreshButton.addEventListener("click", refreshRoom);
+
+      refreshRoom();
+
+      const events = new EventSource("/events");
+
+      events.onopen = () => {
+        setStatus("Live");
+      };
+
+      events.onmessage = () => {
+        refreshRoom();
+      };
+
+      events.onerror = () => {
+        setStatus("Disconnected, retrying...");
+      };
+    </script>
+  </body>
+</html>
