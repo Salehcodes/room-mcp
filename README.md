@@ -7,48 +7,34 @@ The assistant can add furniture, remove items, change lighting, clear the room, 
 ---
 
 ## Demo
+### example of a prompt and result.
+<img width="731" height="187" alt="image" src="https://github.com/user-attachments/assets/e2d271ec-e1cc-4a94-9067-95164e84d076" />
+### chatGPT reply: 
+
+<img width="505" height="595" alt="image" src="https://github.com/user-attachments/assets/c05f23c6-77e5-4c16-a4e6-b7c2981345aa" />
+
+### result 
+<img width="1658" height="867" alt="image" src="https://github.com/user-attachments/assets/86ad5298-dd26-47f9-9e1b-89f52d724c72" />
 
 ### Recorded Video
 
-> Add your recorded demo video here.
-
 ```md
-[Watch the demo video](./docs/demo.mp4)
+[Watch the demo video](https://www.youtube.com/watch?v=Zv9mTm1hc30)
 ```
 
-Or upload the video to GitHub, YouTube, or LinkedIn and place the link here:
-
-```md
-[Watch the demo video](https://your-video-link-here.com)
-```
-
----
 
 ## Screenshots
 
 ### Empty Room
 
 > Add a screenshot of the empty room here.
+<img width="1858" height="843" alt="image" src="https://github.com/user-attachments/assets/567a8aa6-d794-4d0c-a4cb-6db9713361bb" />
 
-```md
-![Empty Room](./docs/screenshots/empty-room.png)
-```
 
 ### Room After Adding Furniture
 
-> Add a screenshot after adding items with MCP tools.
+<img width="1033" height="782" alt="image" src="https://github.com/user-attachments/assets/5d09a6a4-3dea-46ae-83e6-e259d2be9d20" />
 
-```md
-![Room With Furniture](./docs/screenshots/room-with-furniture.png)
-```
-
-### Live Frontend Viewer
-
-> Add a screenshot of the browser frontend.
-
-```md
-![Frontend Viewer](./docs/screenshots/frontend-viewer.png)
-```
 
 ---
 
