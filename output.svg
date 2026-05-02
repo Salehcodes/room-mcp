@@ -1,0 +1,1357 @@
+
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 800 600"
+        width="800"
+        height="600"
+        style="background:#F5F5F0;"
+      >
+        <defs>
+          <filter id="soft-glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="4" result="blur"/>
+            <feMerge>
+              <feMergeNode in="blur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+        </defs>
+
+        
+      <g id="back-walls">
+        <!-- Left wall -->
+        <path
+          d="M400,185 L100,335 L100,205 L400,55 Z"
+          fill="#EED8B8"
+          stroke="#D4B88C"
+          stroke-width="1"
+        />
+
+        <!-- Right wall -->
+        <path
+          d="M400,185 L700,335 L700,205 L400,55 Z"
+          fill="#E6CDA8"
+          stroke="#D4B88C"
+          stroke-width="1"
+        />
+
+        <!-- Back corner vertical line -->
+        <path
+          d="M400,55 L400,185"
+          stroke="#C7A77A"
+          stroke-width="1"
+          opacity="0.7"
+        />
+
+        <!-- Left wall subtle grid lines -->
+        <path
+          d="M400,95 L160,215"
+          stroke="#D8BD92"
+          stroke-width="0.7"
+          opacity="0.45"
+        />
+        <path
+          d="M400,135 L120,275"
+          stroke="#D8BD92"
+          stroke-width="0.7"
+          opacity="0.45"
+        />
+
+        <!-- Right wall subtle grid lines -->
+        <path
+          d="M400,95 L640,215"
+          stroke="#CBAF84"
+          stroke-width="0.7"
+          opacity="0.45"
+        />
+        <path
+          d="M400,135 L680,275"
+          stroke="#CBAF84"
+          stroke-width="0.7"
+          opacity="0.45"
+        />
+      </g>
+    
+        <g id="floor">
+          <path
+            d="M400,185 L430,200 L400,215 L370,200 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M370,200 L400,215 L370,230 L340,215 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M340,215 L370,230 L340,245 L310,230 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M310,230 L340,245 L310,260 L280,245 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M280,245 L310,260 L280,275 L250,260 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M250,260 L280,275 L250,290 L220,275 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M220,275 L250,290 L220,305 L190,290 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M190,290 L220,305 L190,320 L160,305 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M160,305 L190,320 L160,335 L130,320 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M130,320 L160,335 L130,350 L100,335 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M430,200 L460,215 L430,230 L400,215 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M400,215 L430,230 L400,245 L370,230 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M370,230 L400,245 L370,260 L340,245 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M340,245 L370,260 L340,275 L310,260 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M310,260 L340,275 L310,290 L280,275 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M280,275 L310,290 L280,305 L250,290 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M250,290 L280,305 L250,320 L220,305 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M220,305 L250,320 L220,335 L190,320 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M190,320 L220,335 L190,350 L160,335 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M160,335 L190,350 L160,365 L130,350 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M460,215 L490,230 L460,245 L430,230 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M430,230 L460,245 L430,260 L400,245 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M400,245 L430,260 L400,275 L370,260 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M370,260 L400,275 L370,290 L340,275 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M340,275 L370,290 L340,305 L310,290 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M310,290 L340,305 L310,320 L280,305 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M280,305 L310,320 L280,335 L250,320 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M250,320 L280,335 L250,350 L220,335 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M220,335 L250,350 L220,365 L190,350 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M190,350 L220,365 L190,380 L160,365 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M490,230 L520,245 L490,260 L460,245 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M460,245 L490,260 L460,275 L430,260 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M430,260 L460,275 L430,290 L400,275 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M400,275 L430,290 L400,305 L370,290 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M370,290 L400,305 L370,320 L340,305 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M340,305 L370,320 L340,335 L310,320 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M310,320 L340,335 L310,350 L280,335 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M280,335 L310,350 L280,365 L250,350 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M250,350 L280,365 L250,380 L220,365 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M220,365 L250,380 L220,395 L190,380 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M520,245 L550,260 L520,275 L490,260 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M490,260 L520,275 L490,290 L460,275 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M460,275 L490,290 L460,305 L430,290 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M430,290 L460,305 L430,320 L400,305 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M400,305 L430,320 L400,335 L370,320 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M370,320 L400,335 L370,350 L340,335 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M340,335 L370,350 L340,365 L310,350 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M310,350 L340,365 L310,380 L280,365 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M280,365 L310,380 L280,395 L250,380 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M250,380 L280,395 L250,410 L220,395 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M550,260 L580,275 L550,290 L520,275 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M520,275 L550,290 L520,305 L490,290 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M490,290 L520,305 L490,320 L460,305 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M460,305 L490,320 L460,335 L430,320 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M430,320 L460,335 L430,350 L400,335 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M400,335 L430,350 L400,365 L370,350 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M370,350 L400,365 L370,380 L340,365 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M340,365 L370,380 L340,395 L310,380 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M310,380 L340,395 L310,410 L280,395 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M280,395 L310,410 L280,425 L250,410 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M580,275 L610,290 L580,305 L550,290 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M550,290 L580,305 L550,320 L520,305 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M520,305 L550,320 L520,335 L490,320 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M490,320 L520,335 L490,350 L460,335 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M460,335 L490,350 L460,365 L430,350 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M430,350 L460,365 L430,380 L400,365 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M400,365 L430,380 L400,395 L370,380 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M370,380 L400,395 L370,410 L340,395 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M340,395 L370,410 L340,425 L310,410 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M310,410 L340,425 L310,440 L280,425 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M610,290 L640,305 L610,320 L580,305 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M580,305 L610,320 L580,335 L550,320 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M550,320 L580,335 L550,350 L520,335 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M520,335 L550,350 L520,365 L490,350 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M490,350 L520,365 L490,380 L460,365 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M460,365 L490,380 L460,395 L430,380 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M430,380 L460,395 L430,410 L400,395 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M400,395 L430,410 L400,425 L370,410 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M370,410 L400,425 L370,440 L340,425 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M340,425 L370,440 L340,455 L310,440 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M640,305 L670,320 L640,335 L610,320 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M610,320 L640,335 L610,350 L580,335 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M580,335 L610,350 L580,365 L550,350 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M550,350 L580,365 L550,380 L520,365 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M520,365 L550,380 L520,395 L490,380 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M490,380 L520,395 L490,410 L460,395 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M460,395 L490,410 L460,425 L430,410 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M430,410 L460,425 L430,440 L400,425 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M400,425 L430,440 L400,455 L370,440 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M370,440 L400,455 L370,470 L340,455 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M670,320 L700,335 L670,350 L640,335 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M640,335 L670,350 L640,365 L610,350 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M610,350 L640,365 L610,380 L580,365 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M580,365 L610,380 L580,395 L550,380 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M550,380 L580,395 L550,410 L520,395 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M520,395 L550,410 L520,425 L490,410 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M490,410 L520,425 L490,440 L460,425 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M460,425 L490,440 L460,455 L430,440 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M430,440 L460,455 L430,470 L400,455 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        
+          <path
+            d="M400,455 L430,470 L400,485 L370,470 Z"
+            fill="#E8DCC4"
+            stroke="#D4C5A9"
+            stroke-width="0.5"
+          />
+        </g>
+        <g id="wall-items">
+        <g transform="translate(526, 208)">
+          
+        <g transform="translate(0,-8)">
+          <rect x="-34" y="-64" width="68" height="48" rx="3"
+            fill="#6B4A2F"
+            stroke="#3B281A"
+            stroke-width="2"/>
+          <rect x="-28" y="-58" width="56" height="36" rx="2" fill="#77C9EA"/>
+
+          <rect x="-3" y="-58" width="6" height="36" fill="#6B4A2F"/>
+          <rect x="-28" y="-42" width="56" height="5" fill="#6B4A2F"/>
+
+          
+          <circle cx="-16" cy="-42" r="7" fill="#FFD95C"/>
+          <circle cx="-16" cy="-42" r="13" fill="#FFD95C" opacity="0.22"/>
+          <path d="M7,-28 C16,-38 27,-38 36,-28"
+            fill="none"
+            stroke="#FFF"
+            stroke-width="2"
+            opacity="0.75"/>
+        
+
+          <path d="M-27,-57 L-4,-57 L-27,-34 Z" fill="#FFF" opacity="0.14"/>
+          <path d="M4,-57 L27,-57 L4,-34 Z" fill="#FFF" opacity="0.12"/>
+        </g>
+      
+        </g>
+      </g>
+        <g id="floor-items">
+        <g transform="translate(370, 245)">
+          
+        <g>
+          <ellipse cx="0" cy="8" rx="22" ry="9" fill="rgba(0,0,0,0.16)"/>
+
+          <g transform="translate(0,-4)">
+            <path d="M0,4.2 L8.4,0 L8.4,-5 L0,-0.7999999999999998 Z"
+      fill="#222"
+      stroke="rgba(0,0,0,0.25)"
+      stroke-width="1"
+      stroke-linejoin="round"/>
+            <path d="M0,4.2 L-8.4,0 L-8.4,-5 L0,-0.7999999999999998 Z"
+      fill="#333"
+      stroke="rgba(0,0,0,0.25)"
+      stroke-width="1"
+      stroke-linejoin="round"/>
+            <path d="M0,-4.2 L8.4,0 L0,4.2 L-8.4,0 Z"
+      fill="#444"
+      stroke="rgba(0,0,0,0.25)"
+      stroke-width="1"
+      stroke-linejoin="round"/>
+          </g>
+
+          <rect x="-2.5" y="-37" width="5" height="32" rx="2" fill="#333"/>
+          <rect x="-1" y="-37" width="2" height="32" rx="1" fill="#666" opacity="0.7"/>
+
+          <g transform="translate(0,-44)">
+            <path d="M0,7.199999999999999 L20.400000000000002,0 L20.400000000000002,-10 L0,-2.8000000000000007 Z"
+      fill="#BD831B"
+      stroke="rgba(0,0,0,0.25)"
+      stroke-width="1"
+      stroke-linejoin="round"/>
+            <path d="M0,7.199999999999999 L-20.400000000000002,0 L-20.400000000000002,-10 L0,-2.8000000000000007 Z"
+      fill="#D69C2E"
+      stroke="rgba(0,0,0,0.25)"
+      stroke-width="1"
+      stroke-linejoin="round"/>
+            <path d="M0,-7.199999999999999 L20.400000000000002,0 L0,7.199999999999999 L-20.400000000000002,0 Z"
+      fill="#F5C65A"
+      stroke="rgba(0,0,0,0.25)"
+      stroke-width="1"
+      stroke-linejoin="round"/>
+          </g>
+
+          <ellipse cx="0" cy="-31" rx="28" ry="11" fill="#FFE69A" opacity="0.25" filter="url(#soft-glow)"/>
+        </g>
+      
+        </g>
+      
+        <g transform="translate(370, 275)">
+          
+      <g>
+        <ellipse cx="0" cy="8" rx="36" ry="10" fill="rgba(0,0,0,0.16)"/>
+
+        <!-- BACK LEGS: from floor up to backrest -->
+        <g transform="translate(26,0)">
+          <path d="M0,1.7999999999999998 L3.5999999999999996,0 L3.5999999999999996,-42 L0,-40.2 Z"
+      fill="#4F321A"
+      stroke="rgba(0,0,0,0.25)"
+      stroke-width="1"
+      stroke-linejoin="round"/>
+          <path d="M0,1.7999999999999998 L-3.5999999999999996,0 L-3.5999999999999996,-42 L0,-40.2 Z"
+      fill="#5E3D22"
+      stroke="rgba(0,0,0,0.25)"
+      stroke-width="1"
+      stroke-linejoin="round"/>
+          <g transform="translate(0,-42)">
+            <path d="M0,-1.7999999999999998 L3.5999999999999996,0 L0,1.7999999999999998 L-3.5999999999999996,0 Z"
+      fill="#7A5530"
+      stroke="rgba(0,0,0,0.25)"
+      stroke-width="1"
+      stroke-linejoin="round"/>
+          </g>
+        </g>
+
+        <g transform="translate(4,-18)">
+          <path d="M0,1.7999999999999998 L3.5999999999999996,0 L3.5999999999999996,-42 L0,-40.2 Z"
+      fill="#4F321A"
+      stroke="rgba(0,0,0,0.25)"
+      stroke-width="1"
+      stroke-linejoin="round"/>
+          <path d="M0,1.7999999999999998 L-3.5999999999999996,0 L-3.5999999999999996,-42 L0,-40.2 Z"
+      fill="#5E3D22"
+      stroke="rgba(0,0,0,0.25)"
+      stroke-width="1"
+      stroke-linejoin="round"/>
+          <g transform="translate(0,-42)">
+            <path d="M0,-1.7999999999999998 L3.5999999999999996,0 L0,1.7999999999999998 L-3.5999999999999996,0 Z"
+      fill="#7A5530"
+      stroke="rgba(0,0,0,0.25)"
+      stroke-width="1"
+      stroke-linejoin="round"/>
+          </g>
+        </g>
+
+        <!-- FRONT LEGS -->
+        <g transform="translate(0,7)">
+          <path d="M0,1.7999999999999998 L3.5999999999999996,0 L3.5999999999999996,-18 L0,-16.2 Z"
+      fill="#5A3A1F"
+      stroke="rgba(0,0,0,0.25)"
+      stroke-width="1"
+      stroke-linejoin="round"/>
+          <path d="M0,1.7999999999999998 L-3.5999999999999996,0 L-3.5999999999999996,-18 L0,-16.2 Z"
+      fill="#6B4A28"
+      stroke="rgba(0,0,0,0.25)"
+      stroke-width="1"
+      stroke-linejoin="round"/>
+          <g transform="translate(0,-18)">
+            <path d="M0,-1.7999999999999998 L3.5999999999999996,0 L0,1.7999999999999998 L-3.5999999999999996,0 Z"
+      fill="#8A5E35"
+      stroke="rgba(0,0,0,0.25)"
+      stroke-width="1"
+      stroke-linejoin="round"/>
+          </g>
+        </g>
+
+        <g transform="translate(-22,-1)">
+          <path d="M0,1.7999999999999998 L3.5999999999999996,0 L3.5999999999999996,-18 L0,-16.2 Z"
+      fill="#5A3A1F"
+      stroke="rgba(0,0,0,0.25)"
+      stroke-width="1"
+      stroke-linejoin="round"/>
+          <path d="M0,1.7999999999999998 L-3.5999999999999996,0 L-3.5999999999999996,-18 L0,-16.2 Z"
+      fill="#6B4A28"
+      stroke="rgba(0,0,0,0.25)"
+      stroke-width="1"
+      stroke-linejoin="round"/>
+          <g transform="translate(0,-18)">
+            <path d="M0,-1.7999999999999998 L3.5999999999999996,0 L0,1.7999999999999998 L-3.5999999999999996,0 Z"
+      fill="#8A5E35"
+      stroke="rgba(0,0,0,0.25)"
+      stroke-width="1"
+      stroke-linejoin="round"/>
+          </g>
+        </g>
+
+        <!-- SEAT -->
+        <g transform="translate(0,-18)">
+          <path d="M0,9.75 L25.5,0 L25.5,-5 L0,4.75 Z"
+      fill="#6B4A28"
+      stroke="rgba(0,0,0,0.25)"
+      stroke-width="1"
+      stroke-linejoin="round"/>
+          <path d="M0,9.75 L-25.5,0 L-25.5,-5 L0,4.75 Z"
+      fill="#7A5530"
+      stroke="rgba(0,0,0,0.25)"
+      stroke-width="1"
+      stroke-linejoin="round"/>
+          <g transform="translate(0,-5)">
+            <path d="M0,-9.75 L25.5,0 L0,9.75 L-25.5,0 Z"
+      fill="#B07A43"
+      stroke="rgba(0,0,0,0.25)"
+      stroke-width="1"
+      stroke-linejoin="round"/>
+          </g>
+        </g>
+
+        
+
+        <!-- BACKREST connected to the two back legs -->
+        <g transform="translate(3,-55)">
+          <polygon
+            points="28,-5 -5,-15 -5,10 28,22"
+            fill="#8A5A2B"
+            stroke="#4A2E17"
+            stroke-width="2"
+            stroke-linejoin="round"
+          />
+          
+        </g>
+      </g>
+    
+        </g>
+      
+        <g transform="translate(430, 290)">
+          
+      <g>
+        <ellipse cx="0" cy="8" rx="50" ry="12" fill="rgba(0,0,0,0.16)"/>
+
+        <!-- Desk top -->
+        <g transform="translate(0,-22)">
+          <path d="M0,15 L43.5,0 L43.5,-7 L0,8 Z"
+      fill="#6B4A28"
+      stroke="rgba(0,0,0,0.25)"
+      stroke-width="1"
+      stroke-linejoin="round"/>
+          <path d="M0,15 L-43.5,0 L-43.5,-7 L0,8 Z"
+      fill="#7A5530"
+      stroke="rgba(0,0,0,0.25)"
+      stroke-width="1"
+      stroke-linejoin="round"/>
+          <g transform="translate(0,-7)">
+            <path d="M0,-15 L43.5,0 L0,15 L-43.5,0 Z"
+      fill="#A87945"
+      stroke="rgba(0,0,0,0.25)"
+      stroke-width="1"
+      stroke-linejoin="round"/>
+          </g>
+        </g>
+
+        <!-- Front left leg -->
+        <g transform="translate(-45,0)">
+          <path d="M0,2.4 L4.8,0 L4.8,-26 L0,-23.6 Z"
+      fill="#5A3A1F"
+      stroke="rgba(0,0,0,0.25)"
+      stroke-width="1"
+      stroke-linejoin="round"/>
+          <path d="M0,2.4 L-4.8,0 L-4.8,-26 L0,-23.6 Z"
+      fill="#6B4A28"
+      stroke="rgba(0,0,0,0.25)"
+      stroke-width="1"
+      stroke-linejoin="round"/>
+          <g transform="translate(0,-26)">
+            <path d="M0,-2.4 L4.8,0 L0,2.4 L-4.8,0 Z"
+      fill="#8A5E35"
+      stroke="rgba(0,0,0,0.25)"
+      stroke-width="1"
+      stroke-linejoin="round"/>
+          </g>
+        </g>
+
+        <!-- Front right leg -->
+        <g transform="translate(42,0)">
+          <path d="M0,2.4 L4.8,0 L4.8,-26 L0,-23.6 Z"
+      fill="#5A3A1F"
+      stroke="rgba(0,0,0,0.25)"
+      stroke-width="1"
+      stroke-linejoin="round"/>
+          <path d="M0,2.4 L-4.8,0 L-4.8,-26 L0,-23.6 Z"
+      fill="#6B4A28"
+      stroke="rgba(0,0,0,0.25)"
+      stroke-width="1"
+      stroke-linejoin="round"/>
+          <g transform="translate(0,-26)">
+            <path d="M0,-2.4 L4.8,0 L0,2.4 L-4.8,0 Z"
+      fill="#8A5E35"
+      stroke="rgba(0,0,0,0.25)"
+      stroke-width="1"
+      stroke-linejoin="round"/>
+          </g>
+        </g>
+
+
+
+        <!-- Back right leg -->
+        <g transform="translate(-1,10)">
+          <path d="M0,2.1 L4.2,0 L4.2,-22 L0,-19.9 Z"
+      fill="#4F321A"
+      stroke="rgba(0,0,0,0.25)"
+      stroke-width="1"
+      stroke-linejoin="round"/>
+          <path d="M0,2.1 L-4.2,0 L-4.2,-22 L0,-19.9 Z"
+      fill="#5E3D22"
+      stroke="rgba(0,0,0,0.25)"
+      stroke-width="1"
+      stroke-linejoin="round"/>
+          <g transform="translate(0,-22)">
+            <path d="M0,-2.1 L4.2,0 L0,2.1 L-4.2,0 Z"
+      fill="#7A5530"
+      stroke="rgba(0,0,0,0.25)"
+      stroke-width="1"
+      stroke-linejoin="round"/>
+          </g>
+        </g>
+      </g>
+    
+        </g>
+      
+        <g transform="translate(295, 297.5)">
+          
+        <g>
+          <ellipse cx="0" cy="8" rx="56" ry="14" fill="rgba(0,0,0,0.16)"/>
+
+          <!-- Bed frame -->
+          <g transform="translate(0,-4)">
+            <path d="M0,13.2 L55.5,0 L55.5,-10 L0,3.1999999999999993 Z"
+      fill="#6B4A28"
+      stroke="rgba(0,0,0,0.25)"
+      stroke-width="1"
+      stroke-linejoin="round"/>
+            <path d="M0,13.2 L-55.5,0 L-55.5,-10 L0,3.1999999999999993 Z"
+      fill="#7A5530"
+      stroke="rgba(0,0,0,0.25)"
+      stroke-width="1"
+      stroke-linejoin="round"/>
+            <g transform="translate(0,-10)">
+              <path d="M0,-13.2 L55.5,0 L0,13.2 L-55.5,0 Z"
+      fill="#9B7040"
+      stroke="rgba(0,0,0,0.25)"
+      stroke-width="1"
+      stroke-linejoin="round"/>
+            </g>
+          </g>
+
+          <!-- Mattress -->
+          <g transform="translate(0,-15)">
+            <path d="M0,10.799999999999999 L49.5,0 L49.5,-6 L0,4.799999999999999 Z"
+      fill="#C4B5A1"
+      stroke="rgba(0,0,0,0.25)"
+      stroke-width="1"
+      stroke-linejoin="round"/>
+            <path d="M0,10.799999999999999 L-49.5,0 L-49.5,-6 L0,4.799999999999999 Z"
+      fill="#D8CDBC"
+      stroke="rgba(0,0,0,0.25)"
+      stroke-width="1"
+      stroke-linejoin="round"/>
+            <g transform="translate(0,-6)">
+              <path d="M0,-10.799999999999999 L49.5,0 L0,10.799999999999999 L-49.5,0 Z"
+      fill="#F0E8D8"
+      stroke="rgba(0,0,0,0.25)"
+      stroke-width="1"
+      stroke-linejoin="round"/>
+            </g>
+          </g>
+
+          <!-- Blanket -->
+          <g transform="translate(10,-23)">
+            <path d="M0,9.9 L34.5,0 L34.5,-5 L0,4.9 Z"
+      fill="#244777"
+      stroke="rgba(0,0,0,0.25)"
+      stroke-width="1"
+      stroke-linejoin="round"/>
+            <path d="M0,9.9 L-34.5,0 L-34.5,-5 L0,4.9 Z"
+      fill="#335FA8"
+      stroke="rgba(0,0,0,0.25)"
+      stroke-width="1"
+      stroke-linejoin="round"/>
+            <g transform="translate(0,-5)">
+              <path d="M0,-9.9 L34.5,0 L0,9.9 L-34.5,0 Z"
+      fill="#4A79C9"
+      stroke="rgba(0,0,0,0.25)"
+      stroke-width="1"
+      stroke-linejoin="round"/>
+            </g>
+          </g>
+
+          <!-- Pillow -->
+          <g transform="translate(-25,-20)">
+            <path d="M0,4.5 L11.4,0 L11.4,-4 L0,0.5 Z"
+      fill="#CFC0AD"
+      stroke="rgba(0,0,0,0.25)"
+      stroke-width="1"
+      stroke-linejoin="round"/>
+            <path d="M0,4.5 L-11.4,0 L-11.4,-4 L0,0.5 Z"
+      fill="#E7DAC8"
+      stroke="rgba(0,0,0,0.25)"
+      stroke-width="1"
+      stroke-linejoin="round"/>
+            <g transform="translate(0,-4)">
+              <path d="M0,-4.5 L11.4,0 L0,4.5 L-11.4,0 Z"
+      fill="#FFF7EA"
+      stroke="rgba(0,0,0,0.25)"
+      stroke-width="1"
+      stroke-linejoin="round"/>
+            </g>
+          </g>
+        </g>
+      
+        </g>
+      
+        <g transform="translate(580, 350)">
+          
+        <g>
+          <ellipse cx="0" cy="8" rx="28" ry="10" fill="rgba(0,0,0,0.16)"/>
+
+          <g transform="translate(0,-4)">
+            <path d="M0,7.800000000000001 L25.5,0 L25.5,-50 L0,-42.2 Z"
+      fill="#5E3920"
+      stroke="rgba(0,0,0,0.25)"
+      stroke-width="1"
+      stroke-linejoin="round"/>
+            <path d="M0,7.800000000000001 L-25.5,0 L-25.5,-50 L0,-42.2 Z"
+      fill="#7A4B2A"
+      stroke="rgba(0,0,0,0.25)"
+      stroke-width="1"
+      stroke-linejoin="round"/>
+            <g transform="translate(0,-50)">
+              <path d="M0,-7.800000000000001 L25.5,0 L0,7.800000000000001 L-25.5,0 Z"
+      fill="#A97843"
+      stroke="rgba(0,0,0,0.25)"
+      stroke-width="1"
+      stroke-linejoin="round"/>
+            </g>
+          </g>
+
+          <g transform="translate(0,-58)">
+            <rect x="-26" y="0" width="52" height="56" rx="2" fill="#321D11"/>
+            <rect x="-30" y="-3" width="60" height="6" rx="2" fill="#8D5C32"/>
+            <rect x="-30" y="53" width="60" height="6" rx="2" fill="#5E3920"/>
+            <rect x="-30" y="-3" width="6" height="62" fill="#7A4B2A"/>
+            <rect x="24" y="-3" width="6" height="62" fill="#4E2E1A"/>
+
+            <rect x="-24" y="17" width="48" height="4" fill="#7A4B2A"/>
+            <rect x="-24" y="38" width="48" height="4" fill="#7A4B2A"/>
+          </g>
+
+          
+            <g transform="translate(0,-58)">
+              <rect x="-22" y="4" width="6" height="12" fill="#C94A4A"/>
+              <rect x="-14" y="1" width="7" height="15" fill="#4A79C9"/>
+              <rect x="-5" y="6" width="5" height="10" fill="#E0B84A"/>
+              <rect x="3" y="3" width="7" height="13" fill="#5EAD68"/>
+              <rect x="13" y="5" width="6" height="11" fill="#9B5BC9"/>
+
+              <rect x="-22" y="24" width="7" height="13" fill="#E07A3F"/>
+              <rect x="-12" y="27" width="6" height="10" fill="#5EAD68"/>
+              <rect x="-3" y="22" width="8" height="15" fill="#C94A4A"/>
+              <rect x="8" y="25" width="7" height="12" fill="#4A79C9"/>
+              <rect x="18" y="23" width="5" height="14" fill="#E0B84A"/>
+
+              <rect x="-22" y="43" width="7" height="13" fill="#4A79C9"/>
+              <rect x="-12" y="46" width="7" height="10" fill="#9B5BC9"/>
+              <rect x="-2" y="41" width="6" height="15" fill="#5EAD68"/>
+              <rect x="8" y="44" width="7" height="12" fill="#C94A4A"/>
+              <rect x="18" y="47" width="5" height="9" fill="#E07A3F"/>
+            </g>
+          
+        </g>
+      
+        </g>
+      
+        <g transform="translate(370, 365)">
+          
+        <g>
+          <path d="M0,-12.299999999999999 L28.5,0 L0,12.299999999999999 L-28.5,0 Z"
+      fill="#244777"
+      stroke="rgba(0,0,0,0.25)"
+      stroke-width="1"
+      stroke-linejoin="round"/>
+          <g transform="translate(0,-1)">
+            <path d="M0,-9.3 L21.599999999999998,0 L0,9.3 L-21.599999999999998,0 Z"
+      fill="#4A79C9"
+      stroke="rgba(0,0,0,0.25)"
+      stroke-width="1"
+      stroke-linejoin="round"/>
+          </g>
+          <g transform="translate(0,-2)">
+            <path d="M0,-5.3999999999999995 L13.5,0 L0,5.3999999999999995 L-13.5,0 Z"
+      fill="#AFC8F2"
+      stroke="rgba(0,0,0,0.25)"
+      stroke-width="1"
+      stroke-linejoin="round"/>
+          </g>
+
+          <g opacity="0.85">
+            <line x1="-13" y1="0" x2="0" y2="-7"
+    stroke="#EAF2FF"
+    stroke-width="1.5"
+    opacity="1"
+    stroke-linecap="round"/>
+            <line x1="0" y1="-7" x2="13" y2="0"
+    stroke="#EAF2FF"
+    stroke-width="1.5"
+    opacity="1"
+    stroke-linecap="round"/>
+            <line x1="-13" y1="0" x2="0" y2="7"
+    stroke="#EAF2FF"
+    stroke-width="1.5"
+    opacity="1"
+    stroke-linecap="round"/>
+            <line x1="0" y1="7" x2="13" y2="0"
+    stroke="#EAF2FF"
+    stroke-width="1.5"
+    opacity="1"
+    stroke-linecap="round"/>
+          </g>
+        </g>
+      
+        </g>
+      
+        <g transform="translate(310, 365)">
+          
+        <g transform="scale(-1,1)">
+          <ellipse cx="0" cy="8" rx="20" ry="6" fill="rgba(0,0,0,0.16)"/>
+
+          <ellipse cx="3" cy="-7" rx="18" ry="10" fill="#686868"/>
+          <ellipse cx="-14" cy="-11" rx="9" ry="7" fill="#686868"/>
+
+          <path d="M-20,-17 L-17,-25 L-13,-17 Z" fill="#444"/>
+          <path d="M-11,-17 L-6,-24 L-5,-16 Z" fill="#444"/>
+
+          <path d="M16,-7 C27,-10 27,2 15,2"
+            fill="none"
+            stroke="#555"
+            stroke-width="5"
+            stroke-linecap="round"/>
+
+          <path d="M-18,-11 Q-15,-9 -12,-11"
+            fill="none"
+            stroke="#222"
+            stroke-width="1.3"
+            stroke-linecap="round"/>
+          <circle cx="-20" cy="-11" r="1.2" fill="#222"/>
+        </g>
+      
+        </g>
+      
+        <g transform="translate(460, 380)">
+          
+        <g>
+          <ellipse cx="0" cy="8" rx="21" ry="8" fill="rgba(0,0,0,0.16)"/>
+
+          <g transform="translate(0,-4)">
+            <path d="M0,6.3 L12.6,0 L12.6,-14 L0,-7.7 Z"
+      fill="#7D321A"
+      stroke="rgba(0,0,0,0.25)"
+      stroke-width="1"
+      stroke-linejoin="round"/>
+            <path d="M0,6.3 L-12.6,0 L-12.6,-14 L0,-7.7 Z"
+      fill="#A64724"
+      stroke="rgba(0,0,0,0.25)"
+      stroke-width="1"
+      stroke-linejoin="round"/>
+            <g transform="translate(0,-14)">
+              <path d="M0,-6.3 L12.6,0 L0,6.3 L-12.6,0 Z"
+      fill="#D66A32"
+      stroke="rgba(0,0,0,0.25)"
+      stroke-width="1"
+      stroke-linejoin="round"/>
+              <path d="M0,-4.2 L8.4,0 L0,4.2 L-8.4,0 Z"
+      fill="#3A2416"
+      stroke="rgba(0,0,0,0.25)"
+      stroke-width="1"
+      stroke-linejoin="round"/>
+            </g>
+          </g>
+
+          <rect x="-2" y="-34" width="4" height="20" rx="2" fill="#2E7D32"/>
+
+          <g transform="translate(0,-39)">
+            <ellipse cx="-12" cy="2" rx="13" ry="6" fill="#438F3A" transform="rotate(-28 -12 2)"/>
+            <ellipse cx="12" cy="1" rx="13" ry="6" fill="#4CAF45" transform="rotate(28 12 1)"/>
+            <ellipse cx="-5" cy="-10" rx="12" ry="6" fill="#5CBF54" transform="rotate(-60 -5 -10)"/>
+            <ellipse cx="7" cy="-12" rx="12" ry="6" fill="#3F9E3A" transform="rotate(58 7 -12)"/>
+            <ellipse cx="0" cy="-20" rx="13" ry="6" fill="#69C861" transform="rotate(-90 0 -20)"/>
+          </g>
+        </g>
+      
+        </g>
+      </g>
+        
+      <rect
+        x="0"
+        y="0"
+        width="800"
+        height="600"
+        fill="#FF8C00"
+        opacity="0.12"
+        style="pointer-events:none; mix-blend-mode:multiply;"
+      />
+    
+      </svg>
+    
