@@ -1,5 +1,5 @@
 # Room MCP — AI-Controlled Isometric Room Builder
-
+⭐ If you found this interesting, consider starring the repo!
 <p align="center">
 <a href="https://www.youtube.com/watch?v=Zv9mTm1hc30">
   <img width="500" alt="Watch Demo" src="https://github.com/user-attachments/assets/2dc4e02b-4c2c-4649-92ce-bf3abb5a1b04" />
